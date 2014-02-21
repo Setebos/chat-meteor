@@ -4,9 +4,9 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-insecure
 preserve-inputs
 bootstrap
 accounts-ui-bootstrap-dropdown
 accounts-password
 iron-router
+moment

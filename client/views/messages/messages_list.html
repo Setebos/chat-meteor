@@ -1,0 +1,13 @@
+<template name="messagesList">
+	<table class="table table-striped table-hover">
+		<tbody>
+			{{#each messages}}
+				<tr>
+					<td style="width:20%"><strong>{{author}}</strong> says : </td>
+					<td style="width:60%">{{content}}</td>
+					<td style="width:20%">{{prettifyDate posted}}</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</template>
