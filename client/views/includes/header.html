@@ -7,8 +7,13 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</a>
-		<h1>Chat</h1>
 		<div class="nav-collapse collapse">
+			<span class="brand">Chat</span>
+			{{#if currentUser}}
+				<ul class="nav">
+					<li class="dropdown">{{> notifications}}</li>
+				</ul>
+			{{/if}}
 			<ul class="nav pull-right">
 				<li>{{loginButtons}}</li>
 			</ul>

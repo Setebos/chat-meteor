@@ -1,11 +1,25 @@
 <template name="messagesList">
-	<table class="table table-striped table-hover">
+	<table class="table table-striped table-hover span9">
 		<tbody>
 			{{#each messages}}
 				<tr>
 					<td style="width:20%"><strong>{{author}}</strong> says : </td>
 					<td style="width:75%">{{content}}</td>
 					<td style="width:5%">{{prettifyDate posted}}</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+	<table class="table table-striped table-hover span3">
+		<thead>
+			<tr>
+				<th>Liste des utilisateurs connectés</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each users}}
+				<tr>
+					<td>{{name}}</td>
 				</tr>
 			{{/each}}
 		</tbody>
