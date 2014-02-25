@@ -4,7 +4,8 @@
     "basePackages": {
       "accounts-ui-bootstrap-dropdown": {},
       "iron-router": {},
-      "moment": {}
+      "moment": {},
+      "user-status": {}
     },
     "packages": {
       "accounts-ui-bootstrap-dropdown": {
@@ -14,13 +15,18 @@
       },
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
-        "tag": "v0.6.2",
-        "commit": "ce56e58b45624dce992490f3a1c10f10d3948bae"
+        "tag": "v0.6.4",
+        "commit": "927bbaed1b87894fb6fb70807f74ff3a5bd89f29"
       },
       "moment": {
         "git": "https://github.com/acreeger/meteor-moment.git",
         "tag": "v2.5.1",
         "commit": "8c9bc5d3fc96705057737cb9743d555417f6e551"
+      },
+      "user-status": {
+        "git": "https://github.com/mizzao/meteor-user-status.git",
+        "tag": "v0.2.0",
+        "commit": "e18cc48440710d0ac23bd1a578974f9142226bf4"
       }
     }
   }
