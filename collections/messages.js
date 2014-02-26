@@ -12,6 +12,8 @@ Meteor.methods({
 			throw new Meteor.Error(422, 'Please fill in a message');
 		} 
 
+		var content = postAttributes['content'];
+
 		var message = _.extend(_.pick(postAttributes, 'content'), {
 			userId: user._id,
 			author: user.username,
@@ -19,6 +21,13 @@ Meteor.methods({
 		});
 
 		var messageId = Messages.insert(message);
+
+		Meteor.users.find().forEach(function (utilisateur) {
+			if(content.indexOf(utilisateur.username) > -1) {
+				createMessageNotification(message, utilisateur._id);
+			}
+		});
+
 		return messageId;
 	}
 })

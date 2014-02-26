@@ -7,11 +7,11 @@ Template.notifications.helpers({
 	}
 });
 
-Template.notification.helpers({
-	notificationPostPath: function() {
-		return Router.routes.postPage.path({_id: this.postId});
-	}
-});
+// Template.notification.helpers({
+// 	notificationPostPath: function() {
+// 		return Router.routes.postPage.path({_id: this.postId});
+// 	}
+// });
 
 Template.notification.events({
 	'click a': function() {
