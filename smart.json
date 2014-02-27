@@ -3,6 +3,7 @@
     "accounts-ui-bootstrap-dropdown": {},
     "iron-router": {},
     "moment": {},
-    "user-status": {}
+    "user-status": {},
+    "bootboxjs": {}
   }
 }

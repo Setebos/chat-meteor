@@ -24,7 +24,7 @@ Meteor.methods({
 
 		Meteor.users.find().forEach(function (utilisateur) {
 			if(content.indexOf(utilisateur.username) > -1) {
-				createMessageNotification(message, utilisateur._id);
+				createMessageNotification(message, messageId, utilisateur._id);
 			}
 		});
 

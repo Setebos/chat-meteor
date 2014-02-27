@@ -1,10 +1,16 @@
 Notifications = new Meteor.Collection('notifications');
 
-createMessageNotification = function(message, user) {
-	// var post = Messages.findOne(message._id);
+Notifications.allow({
+	update: function(userId, doc) {
+		return !! userId;
+	}
+});
+
+createMessageNotification = function(message, messageId, user) {
 	Notifications.insert({
 		userId: user,
-		messageId: message._id,
+		messageId: messageId,
+		message: message.content,
 		posterName: message.author,
 		read: false
 	});
