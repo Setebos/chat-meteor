@@ -12,7 +12,7 @@ Meteor.methods({
 			throw new Meteor.Error(422, 'Please fill in a message');
 		} 
 
-		var content = postAttributes['content'];
+		var content = postAttributes['content'].toLowerCase();
 
 		var message = _.extend(_.pick(postAttributes, 'content'), {
 			userId: user._id,
@@ -23,7 +23,7 @@ Meteor.methods({
 		var messageId = Messages.insert(message);
 
 		Meteor.users.find().forEach(function (utilisateur) {
-			if(content.indexOf(utilisateur.username) > -1) {
+			if(content.indexOf(utilisateur.username.toLowerCase()) > -1) {
 				createMessageNotification(message, messageId, utilisateur._id);
 			}
 		});

@@ -11,6 +11,7 @@ createMessageNotification = function(message, messageId, user) {
 		userId: user,
 		messageId: messageId,
 		message: message.content,
+		posted: message.posted,
 		posterName: message.author,
 		read: false
 	});
