@@ -28,6 +28,12 @@ Meteor.methods({
 			}
 		});
 
+		Alerts.find().forEach(function (alert) {
+			if(content.indexOf(alert.alertText.toLowerCase()) > -1) {
+				createMessageNotification(message, messageId, alert.userId);
+			}
+		});
+
 		return messageId;
 	}
 })

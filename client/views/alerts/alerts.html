@@ -1,0 +1,23 @@
+<template name="alerts">
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		My Alerts
+		<b class="caret"></b>
+	</a>
+	<ul class="alert dropdown-menu">
+		{{#if alertCount}}
+			{{#each alerts}}
+				{{> alert}}
+			{{/each}}
+			<li><a class="new-alert" href="#">New Alert</a></li>
+		{{else}}
+			<li><span>No alerts</span></li>
+			<li><a class="new-alert" href="#">New Alert</a></li>
+		{{/if}}
+	</ul>
+</template>
+
+<template name="alert">
+	<li class="alert-li">
+		{{alertText}}
+	</li>
+</template>
