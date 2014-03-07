@@ -24,13 +24,13 @@ Meteor.methods({
 
 		Meteor.users.find().forEach(function (utilisateur) {
 			if(content.indexOf(utilisateur.username.toLowerCase()) > -1) {
-				createMessageNotification(message, messageId, utilisateur._id);
+				createMessageNotification(message, messageId, utilisateur._id, false);
 			}
 		});
 
 		Alerts.find().forEach(function (alert) {
 			if(content.indexOf(alert.alertText.toLowerCase()) > -1) {
-				createMessageNotification(message, messageId, alert.userId);
+				createMessageNotification(message, messageId, alert.userId, true);
 			}
 		});
 

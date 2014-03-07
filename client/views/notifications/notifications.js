@@ -1,6 +1,9 @@
 Template.notifications.helpers({
 	notifications: function() {
-		return Notifications.find({userId: Meteor.userId(), read: false});
+		return Notifications.find({userId: Meteor.userId(), read: false, personal: false});
+	},
+	personalNotifications: function() {
+		return Notifications.find({userId: Meteor.userId(), read: false, personal: true});
 	},
 	notificationCount: function(){
 		return Notifications.find({userId: Meteor.userId(), read: false}).count();
@@ -8,6 +11,13 @@ Template.notifications.helpers({
 });
 
 Template.notification.events({
+	'click a': function() {
+		Notifications.update(this._id, {$set: {read: true}});
+		bootbox.alert("<p> Message posté à " + moment(new Date(this.posted)).format('HH:mm') + " le " + moment(new Date(this.posted)).format('DD/MM') + " : </p><blockquote><p>" + this.message + "</p></blockquote>");
+	}
+});
+
+Template.personalNotification.events({
 	'click a': function() {
 		Notifications.update(this._id, {$set: {read: true}});
 		bootbox.alert("<p> Message posté à " + moment(new Date(this.posted)).format('HH:mm') + " le " + moment(new Date(this.posted)).format('DD/MM') + " : </p><blockquote><p>" + this.message + "</p></blockquote>");

@@ -9,15 +9,29 @@ Template.alerts.helpers({
 
 Template.alerts.events({
 	'click a.new-alert': function() {
-		bootbox.prompt("New Alert", function(result) {
+		bootbox.prompt("Nouvelle alerte", function(result) {
 			if (result !== null) {
 				Meteor.call('createNewAlert', result, function(error, id) {
 					if(error) {
 						throwError(error.reason);
 					}
 				});
-				// Alerts.createNewAlert(result);
 			}
 		});
 	}
 });
+
+Template.alert.events({
+	'click a.alert-delete': function() {
+		var id = this._id
+		bootbox.confirm("Voulez-vous supprimer cette alerte personnalisée ?", function(result) {
+			if(result == true) {
+				Meteor.call('deleteAlert', id, function(error, id) {
+					if(error) {
+						throwError(error.reason);
+					}
+				});
+			}
+		});
+	}
+})

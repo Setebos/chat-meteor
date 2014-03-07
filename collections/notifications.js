@@ -6,13 +6,14 @@ Notifications.allow({
 	}
 });
 
-createMessageNotification = function(message, messageId, user) {
+createMessageNotification = function(message, messageId, user, personal) {
 	Notifications.insert({
 		userId: user,
 		messageId: messageId,
 		message: message.content,
 		posted: message.posted,
 		posterName: message.author,
-		read: false
+		read: false,
+		personal: personal
 	});
 };

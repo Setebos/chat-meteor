@@ -1,6 +1,6 @@
 <template name="alerts">
 	<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-		My Alerts
+		Alertes Personnalisées
 		<b class="caret"></b>
 	</a>
 	<ul class="alert dropdown-menu">
@@ -8,16 +8,18 @@
 			{{#each alerts}}
 				{{> alert}}
 			{{/each}}
-			<li><a class="new-alert" href="#">New Alert</a></li>
+			<li><a class="new-alert" href="#"><i class="icon-plus"></i> Nouvelle alerte</a></li>
 		{{else}}
-			<li><span>No alerts</span></li>
-			<li><a class="new-alert" href="#">New Alert</a></li>
+			<li><span>Aucune alerte</span></li>
+			<li><a class="new-alert" href="#"><i class="icon-plus"></i> Nouvelle alerte</a></li>
 		{{/if}}
 	</ul>
 </template>
 
 <template name="alert">
 	<li class="alert-li">
-		{{alertText}}
+		<a class="alert-delete" href="#">
+			{{alertText}}
+		</a>
 	</li>
 </template>

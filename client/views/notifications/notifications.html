@@ -11,6 +11,9 @@
 			{{#each notifications}}
 				{{> notification}}
 			{{/each}}
+			{{#each personalNotifications}}
+				{{> personalNotification}}
+			{{/each}}
 		{{else}}
 			<li><span>No Notifications</span></li>
 		{{/if}}
@@ -21,6 +24,14 @@
 	<li class="notification-li">
 		<a href="#">
 			<strong>{{posterName}}</strong> vous a mentionné
+		</a>
+	</li>
+</template>
+
+<template name="personalNotification">
+	<li class="notification-li">
+		<a href="#">
+			<strong>{{posterName}}</strong> a mentionné une alerte personnalisée
 		</a>
 	</li>
 </template>

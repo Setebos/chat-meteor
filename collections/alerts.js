@@ -6,7 +6,10 @@ Meteor.methods({
 			userId: Meteor.userId(),
 			alertText: text
 		});
-
 		return alertId;
+	},
+	deleteAlert: function(id) {
+		var result = Alerts.remove({_id: id});
+		return result;
 	}
 })
