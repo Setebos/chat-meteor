@@ -29,7 +29,8 @@ Meteor.methods({
 		});
 
 		Alerts.find().forEach(function (alert) {
-			if(content.indexOf(alert.alertText.toLowerCase()) > -1) {
+			// Vérifier qu'il n'y a pas déjà une notif pour ce message avant d'en créer une
+			if((content.indexOf(alert.alertText.toLowerCase()) > -1) && (!Notifications.find({messageId: messageId, userId: alert.userId}).fetch().length)) {
 				createMessageNotification(message, messageId, alert.userId, true);
 			}
 		});
