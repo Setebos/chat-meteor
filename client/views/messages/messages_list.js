@@ -9,6 +9,9 @@ Template.messagesList.helpers({
 	},
 	notifMessage: function() {
 		return Notifications.find({messageId: this._id, userId: Meteor.userId()}).fetch().length;
+	},
+	isAdmin: function() {
+		return Meteor.users.find({_id: Meteor.userId(), role: 'superadmin'}).fetch().length;
 	}
 })
 

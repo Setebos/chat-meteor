@@ -27,3 +27,11 @@
 // 		posted: now - 3 * 3600 * 1000,
 // 	});
 // }
+
+if ( Meteor.users.find().count() === 0 ) {
+    Accounts.createUser({
+        username: 'HerrGeneral',
+        password: 'admin',
+        role: 'superadmin'
+    });
+}

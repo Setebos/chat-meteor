@@ -5,11 +5,11 @@ Meteor.methods({
 		var user = Meteor.user();
 
 		if(!user) {
-			throw new Meteor.Error(401, "You need to login to post a message");
+			throw new Meteor.Error(401, "Vous devez être connecté pour poster un message");
 		}
 
 		if(!postAttributes.content) {
-			throw new Meteor.Error(422, 'Please fill in a message');
+			throw new Meteor.Error(422, 'Veuillez entrer un message');
 		} 
 
 		var content = postAttributes['content'].toLowerCase();

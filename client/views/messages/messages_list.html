@@ -20,6 +20,11 @@
 				</tr>
 			</thead>
 			<tbody>
+				{{#if isAdmin}}
+					<tr>
+						<td>BOUH</td>
+					</tr>
+				{{/if}}
 				{{#each users}}
 					<tr>
 						<td>{{username}}</td>
