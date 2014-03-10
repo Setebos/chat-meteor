@@ -2,18 +2,13 @@
   "meteor": {},
   "dependencies": {
     "basePackages": {
-      "accounts-ui-bootstrap-dropdown": {},
       "iron-router": {},
       "moment": {},
       "user-status": {},
-      "bootboxjs": {}
+      "bootstrap-3": {},
+      "accounts-ui-bootstrap-3": {}
     },
     "packages": {
-      "accounts-ui-bootstrap-dropdown": {
-        "git": "https://github.com/erobit/meteor-accounts-ui-bootstrap-dropdown.git",
-        "tag": "v0.6.5.1",
-        "commit": "c8b29d2e7f8611d6dec9d6d23c1c2b94e000b0fb"
-      },
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
         "tag": "v0.6.4",
@@ -29,10 +24,15 @@
         "tag": "v0.2.0",
         "commit": "e18cc48440710d0ac23bd1a578974f9142226bf4"
       },
-      "bootboxjs": {
-        "git": "https://github.com/TimHeckel/meteor-bootboxjs.git",
-        "tag": "v3.2.2",
-        "commit": "580adfebfa12b4d2186a80cec1109dab74ad6228"
+      "bootstrap-3": {
+        "git": "https://github.com/mangasocial/meteor-bootstrap-3.git",
+        "tag": "v3.1.1-1",
+        "commit": "63dd38968828bb8963636df93e9a1c45e2dfe67e"
+      },
+      "accounts-ui-bootstrap-3": {
+        "git": "https://github.com/mangasocial/meteor-accounts-ui-bootstrap-3.git",
+        "tag": "v0.2.6",
+        "commit": "f3ee0ef6bc506314e19585550b4f9f5620c4ada6"
       }
     }
   }

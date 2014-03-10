@@ -5,10 +5,9 @@
 
 standard-app-packages
 preserve-inputs
-bootstrap
-accounts-ui-bootstrap-dropdown
-accounts-password
 iron-router
 moment
 user-status
-bootboxjs
+bootstrap-3
+accounts-ui-bootstrap-3
+accounts-password

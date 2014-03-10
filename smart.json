@@ -1,9 +1,12 @@
 {
   "packages": {
-    "accounts-ui-bootstrap-dropdown": {},
     "iron-router": {},
     "moment": {},
     "user-status": {},
-    "bootboxjs": {}
+    "bootstrap-3": {},
+    "accounts-ui-bootstrap-3": {},
+    "bootboxjs": {
+      "version": "4.2.0"
+    }
   }
 }
