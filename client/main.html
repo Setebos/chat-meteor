@@ -1,3 +1,15 @@
-<head>
-	<title>Chat</title>
-</head>
+<template name="main">
+	<head>
+		<title>
+			Chat
+			{{# if notificationCount}}
+				- {{notificationCount}} 
+				{{# if plural}}
+					notifications
+				{{else}}
+					notification
+				{{/if}}
+			{{/if}}
+		</title>
+	</head>
+</template>
