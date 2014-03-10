@@ -4,3 +4,7 @@ body { padding-top: 70px; }
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
+
+.form-inline .form-group input {
+    width:100%;
+}
