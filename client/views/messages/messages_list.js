@@ -21,9 +21,16 @@ Template.messagesList.helpers({
 Template.messagesList.events({
 	'click a.smite': function(e) {
 		var id = this._id;
+		var user = Meteor.users.findOne({_id: id}).username;
+		var content = user + " a été banni";
 		bootbox.confirm("Unleash the BANHAMMER ?", function(result) {
 			if(result == true) {
 				Meteor.call('smite', id, function(error,id) {	
+					if(error) {
+						throwError(error.reason);
+					}
+				});
+				Meteor.call('postBanMessage', content, function(error, id) {
 					if(error) {
 						throwError(error.reason);
 					}
@@ -33,9 +40,16 @@ Template.messagesList.events({
 	},
 	'click a.deban': function(e) {
 		var id = this._id;
+		var user = Meteor.users.findOne({_id: id}).username;
+		var content = user + " a été débanni";
 		bootbox.confirm("Deban ?", function(result) {
 			if(result == true) {
 				Meteor.call('deban', id, function(error,id) {	
+					if(error) {
+						throwError(error.reason);
+					}
+				});
+				Meteor.call('postBanMessage', content, function(error, id) {
 					if(error) {
 						throwError(error.reason);
 					}
@@ -44,4 +58,3 @@ Template.messagesList.events({
 		});
 	}
 });
-

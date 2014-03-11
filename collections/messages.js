@@ -40,5 +40,16 @@ Meteor.methods({
 		});
 
 		return messageId;
+	},
+	postBanMessage: function(content) {
+
+		var message = {
+			userId: null,
+			author: "ChatBot",
+			posted: new Date().getTime(),
+			content: content
+		};
+
+		var messageId = Messages.insert(message);
 	}
 })
