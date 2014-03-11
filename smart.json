@@ -4,9 +4,6 @@
     "moment": {},
     "user-status": {},
     "bootstrap-3": {},
-    "accounts-ui-bootstrap-3": {},
-    "bootboxjs": {
-      "version": "4.2.0"
-    }
+    "accounts-ui-bootstrap-3": {}
   }
 }

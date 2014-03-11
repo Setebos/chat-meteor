@@ -20,14 +20,14 @@
 				</tr>
 			</thead>
 			<tbody>
-				{{#if isAdmin}}
-					<tr>
-						<td>BOUH</td>
-					</tr>
-				{{/if}}
 				{{#each users}}
 					<tr>
-						<td>{{username}}</td>
+						<td>
+							{{username}}
+							{{#if isAdmin}}
+								<a class="smite pull-right" href="#"><i class="glyphicon glyphicon-flash">Foudroyer</i></a>
+							{{/if}}
+						</td>
 					</tr>
 				{{/each}}
 			</tbody>

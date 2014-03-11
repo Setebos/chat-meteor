@@ -29,9 +29,10 @@
 // }
 
 if ( Meteor.users.find().count() === 0 ) {
-    Accounts.createUser({
+    var superadmin = Accounts.createUser({
         username: 'HerrGeneral',
-        password: 'admin',
-        role: 'superadmin'
+        password: 'admin'
     });
+
+    Meteor.users.update(superadmin, {$set: {role: 'superadmin'}});
 }
