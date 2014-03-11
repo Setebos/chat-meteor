@@ -7,9 +7,13 @@ Meteor.publish('notifications', function() {
 });
 
 Meteor.publish('userStatus', function() {
-	return Meteor.users.find({"status.online": true}, {fields: {username: 1, role: 1}})
+	return Meteor.users.find({"status.online": true}, {fields: {username: 1, role: 1, banned: 1}})
 });
 
 Meteor.publish('alerts', function() {
 	return Alerts.find({userId: this.userId});
+});
+
+Meteor.publish('bans', function() {
+	return Bans.find({userId: this.userId});
 });

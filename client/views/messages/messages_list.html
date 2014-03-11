@@ -25,7 +25,11 @@
 						<td>
 							{{username}}
 							{{#if isAdmin}}
-								<a class="smite pull-right" href="#"><i class="glyphicon glyphicon-flash">Foudroyer</i></a>
+								{{#if isBanned}}
+									<a class="deban pull-right" href="#"><i class="glyphicon glyphicon-ban-circle">Deban</i></a>
+								{{else}}
+									<a class="smite pull-right" href="#"><i class="glyphicon glyphicon-flash">Foudroyer</i></a>
+								{{/if}}
 							{{/if}}
 						</td>
 					</tr>

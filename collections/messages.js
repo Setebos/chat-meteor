@@ -8,6 +8,10 @@ Meteor.methods({
 			throw new Meteor.Error(401, "Vous devez être connecté pour poster un message");
 		}
 
+		if(user.banned) {
+			throw new Meteor.Error(401, "Vous avez été banni");
+		}
+
 		if(!postAttributes.content) {
 			throw new Meteor.Error(422, 'Veuillez entrer un message');
 		} 
